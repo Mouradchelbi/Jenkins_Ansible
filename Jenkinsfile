@@ -6,10 +6,11 @@ pipeline {
                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Mouradchelbi/Jenkins_Ansible.git']])
                 
                  }
-        }
-              stage('Ansible') {
-               sh 'ansible-playbook -i inventory.ini playbook.yaml'
-                   }
-        
- }
+               }
+              
+               stage(" execute Ansible") {
+               steps {
+                ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'inventory.ini', inventory: 'dev.inv', playbook: 'apache.yml'
+            }    
+   }    
 }
