@@ -1,0 +1,9 @@
+---
+- name: Main Playbook
+  hosts: all
+  tasks:
+    - ansible.builtin.import_role:
+        name: apache.yaml
+
+    - ansible.builtin.import_role:
+        name: mysql.yaml
