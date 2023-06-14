@@ -7,7 +7,14 @@ pipeline {
                 
                      }
               }
-         
-       ansiblePlaybook becomeUser: null, credentialsId: 'ssh-agent', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/var/lib/jenkins/workspace/Jenkins_Ansible/inventory.ini', playbook: '/var/lib/jenkins/workspace/Jenkins_Ansible/roles/playbook.yaml
+    
+            stage(" execute Ansible") {
+             steps {
+               ansiblePlaybook credentialsId: 'ssh-agent', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/var/lib/jenkins/workspace/Jenkins_Ansible/inventory.ini', playbook: '/var/lib/jenkins/workspace/Jenkins_Ansible/roles/playbook.yaml'
+                }
+           }
+      
+     
+      
       }
 }
