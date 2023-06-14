@@ -1,6 +1,6 @@
 - name: setup Mysql with db and remote login
   become: yes
-  hosts: database
+  hosts: db
   tasks:
     - name: Installing Mysql and dependencies
       package:
