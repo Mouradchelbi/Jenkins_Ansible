@@ -42,17 +42,3 @@
       service:
         name: mysql
         state: restarted
-        
-        
- 
- 
- 
- usage: ansible-playbook [-h] [--version] [-v] [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER] [-c CONNECTION] [-T TIMEOUT]
-                        [--ssh-common-args SSH_COMMON_ARGS] [--sftp-extra-args SFTP_EXTRA_ARGS] [--scp-extra-args SCP_EXTRA_ARGS]
-                        [--ssh-extra-args SSH_EXTRA_ARGS] [-k | --connection-password-file CONNECTION_PASSWORD_FILE] [--force-handlers]
-                        [--flush-cache] [-b] [--become-method BECOME_METHOD] [--become-user BECOME_USER]
-                        [-K | --become-password-file BECOME_PASSWORD_FILE] [-t TAGS] [--skip-tags SKIP_TAGS] [-C] [--syntax-check] [-D]
-                        [-i INVENTORY] [--list-hosts] [-l SUBSET] [-e EXTRA_VARS] [--vault-id VAULT_IDS]
-                        [--ask-vault-password | --vault-password-file VAULT_PASSWORD_FILES] [-f FORKS] [-M MODULE_PATH] [--list-tasks]
-                        [--list-tags] [--step] [--start-at-task START_AT_TASK]
-                        playbook [playbook ...]
