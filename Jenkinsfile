@@ -10,8 +10,11 @@ pipeline {
          
         stage(" execute Ansible") {
            steps {
-            ansiblePlaybook become: true, colorized: true, credentialsId: 'ssh-agent', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/var/lib/jenkins/workspace/Jenkins_Ansible/inventory.ini', playbook: '/var/lib/jenkins/workspace/Jenkins_Ansible/roles/playbook.yaml', sudoUser: 'mouchel'
+            ansiblePlaybook become: true, credentialsId: 'ssh-agent', installation: 'Ansible', inventory: '/var/lib/jenkins/workspace/Jenkins_Ansible/inventory.ini', playbook: '/var/lib/jenkins/workspace/Jenkins_Ansible/roles/playbook.yaml/', sudoUser: null
                 }
            }
+      
+     
+      
       }
 }
