@@ -8,7 +8,8 @@ pipeline {
                  }
         }
               stage('Ansible') {
-               sh 'ansible-playbook -i inventory.ini Playbook.yaml'
+               sh 'ansible-playbook -i inventory.ini playbook.yaml'
                    }
+        
  }
 }
