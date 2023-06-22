@@ -1,10 +1,8 @@
 - hosts: webserver
   become: true
-  vars_files: roles/apache.yml
   roles:
     - webserver
 - hosts: database
   become: true
-  vars_files: roles/mysql.yml
   roles:
     - database
