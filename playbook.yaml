@@ -2,7 +2,7 @@
   become: true
   vars_files: roles/main.yml
   roles:
-    - web
+    - webserver
 - hosts: database
   become: true
   vars_files: roles/main.yml
