@@ -1,18 +1,10 @@
----
-- name: Web
-  hosts: webserver
-  become: yes
-  vars_files:
-    - roles/apache.yaml
-
-  roles:
-    - role: apache
-
-- name: database 
-  hosts: database 
+- hosts: webserver
   become: true
-  vars_files:
-    - roles/mysql.yaml
-
+  vars_files: roles/main.yml
   roles:
-    - role: mysql
+    - web
+- hosts: database
+  become: true
+  vars_files: roles/main.yml
+  roles:
+    - database
