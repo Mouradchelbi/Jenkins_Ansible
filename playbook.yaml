@@ -1,6 +1,6 @@
 ---
 - name: Web
-  hosts: web
+  hosts: webserver
   become: yes
   vars_files:
     - roles/apache.yaml
@@ -8,8 +8,8 @@
   roles:
     - role: apache
 
-- name: DATABASE SERVER
-  hosts: db
+- name: database 
+  hosts: database 
   become: true
   vars_files:
     - roles/mysql.yaml
