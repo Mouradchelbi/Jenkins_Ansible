@@ -1,9 +1,18 @@
 ---
-- name: Main Playbook
-  hosts: all
-  tasks:
-    - ansible.builtin.import_role:
-        name: apache.yaml
+- name: Web
+  hosts: web
+  become: yes
+  vars_files:
+    - roles/apache.yaml
 
-    - ansible.builtin.import_role:
-        name: mysql.yaml
+  roles:
+    - role: apache
+
+- name: DATABASE SERVER
+  hosts: db
+  become: true
+  vars_files:
+    - roles/mysql.yaml
+
+  roles:
+    - role: mysql
