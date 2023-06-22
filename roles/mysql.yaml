@@ -1,6 +1,6 @@
 - name: setup Mysql with db and remote login
   become: yes
-  hosts: db
+  hosts: database
   tasks:
     - name: Installing Mysql and dependencies
       package:
@@ -20,14 +20,14 @@
         enabled: yes
     - name: creating mysql user (medium_post)
       mysql_user:
-        name: dbuser1
+        name: dbuser2
         password: pass123
         priv: '*.*:ALL'
         host: '%'
         state: present
     - name: creating demo
       mysql_db:
-        name: demo
+        name: demo2
         state: present
     - name: Enable remote login to mysql
       lineinfile:
